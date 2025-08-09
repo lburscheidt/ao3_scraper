@@ -14,7 +14,7 @@ NEWSPIDER_MODULE = "ao3_scraper.spiders"
 
 ADDONS = {}
 
-
+LOG_STDOUT=False 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "ao3_scraper (+http://www.yourdomain.com)"
 
