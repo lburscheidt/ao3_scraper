@@ -7,6 +7,20 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+# Add Your ScrapeOps API key
+
+SCRAPEOPS_API_KEY = 'YOUR-API-KEY-HERE'
+
+
+# Add In The ScrapeOps Extension
+EXTENSIONS = {
+'scrapeops_scrapy.extension.ScrapeOpsMonitor': 500, 
+}
+
+
+# Update The Download Middlewares
+
+
 BOT_NAME = "ao3_scraper"
 
 SPIDER_MODULES = ["ao3_scraper.spiders"]
@@ -58,6 +72,12 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, lik
 #    'rotating_free_proxies.middlewares.RotatingProxyMiddleware': 610,
 #    'rotating_free_proxies.middlewares.BanDetectionMiddleware': 620,
 # }
+
+DOWNLOADER_MIDDLEWARES = {
+'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
+'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
+}
+
 
 
 # Disable Telnet Console (enabled by default)
