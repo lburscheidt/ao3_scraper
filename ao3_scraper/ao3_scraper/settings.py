@@ -92,7 +92,7 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, lik
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   "ao3_scraper.pipelines.Ao3StatsPipeline": 300,
+   "ao3_scraper.pipelines.Ao3ScraperPipeline": 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
