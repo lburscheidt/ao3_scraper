@@ -13,7 +13,7 @@ import os
 
 
 class Ao3spiderSpider(scrapy.Spider):
-    name = "loginspider"
+    name = "scrapespider"
     allowed_domains = ["archiveofourown.org"]
     start_urls = ["https://archiveofourown.org/users/login"]
 
