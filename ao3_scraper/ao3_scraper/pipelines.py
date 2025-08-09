@@ -6,7 +6,7 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-
+import json, datetime
 
 class Ao3ScraperPipeline:
     def process_item(self, item, spider):
@@ -20,3 +20,15 @@ class Ao3ScraperPipeline:
 
     def close_spider(self, spider):
         self.file.close()
+
+
+class JsonWriterPipeline(object):
+    def process_item(self, item, spider):
+        # return item
+        fileName = datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".json"
+        try:
+            with open(fileName, "w") as fp:
+                json.dump(dict(item), fp)
+                return item
+        except:
+            return item
