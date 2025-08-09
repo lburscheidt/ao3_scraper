@@ -9,12 +9,12 @@
 
 # Add Your ScrapeOps API key
 
-SCRAPEOPS_API_KEY = 'YOUR-API-KEY-HERE'
+SCRAPEOPS_API_KEY = "0228ccf6-1d5c-4b7a-b599-fb5cc79bda5b"
 
 
 # Add In The ScrapeOps Extension
 EXTENSIONS = {
-'scrapeops_scrapy.extension.ScrapeOpsMonitor': 500, 
+    "scrapeops_scrapy.extension.ScrapeOpsMonitor": 500,
 }
 
 
@@ -28,9 +28,9 @@ NEWSPIDER_MODULE = "ao3_scraper.spiders"
 
 ADDONS = {}
 
-LOG_STDOUT=False 
+LOG_STDOUT = False
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "ao3_scraper (+http://www.yourdomain.com)"
+# USER_AGENT = "ao3_scraper (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -74,10 +74,9 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, lik
 # }
 
 DOWNLOADER_MIDDLEWARES = {
-'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
-'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
+    "scrapeops_scrapy.middleware.retry.RetryMiddleware": 550,
+    "scrapy.downloadermiddlewares.retry.RetryMiddleware": None,
 }
-
 
 
 # Disable Telnet Console (enabled by default)
@@ -112,7 +111,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   "ao3_scraper.pipelines.Ao3ScraperPipeline": 300,
+    "ao3_scraper.pipelines.Ao3ScraperPipeline": 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -138,4 +137,3 @@ ITEM_PIPELINES = {
 
 # Set settings whose default value is deprecated to a future-proof value
 FEED_EXPORT_ENCODING = "utf-8"
-
